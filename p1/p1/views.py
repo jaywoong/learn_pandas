@@ -31,3 +31,7 @@ def iots(request):
 def jpgs(request):
     P109().mat01()
     return render(request, 'jpgs.html')
+
+def maps(request):
+    P109().mat07()
+    return render(request, 'seoul_map.html')

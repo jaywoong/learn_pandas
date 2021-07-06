@@ -25,5 +25,6 @@ urlpatterns = [
     path('c1data', views.c1data, name='c1data'),
     path('iots', views.iots, name='iots'),
     path('jpgs', views.jpgs, name='jpgs'),
+    path('maps', views.maps, name='maps'),
 
 ]
