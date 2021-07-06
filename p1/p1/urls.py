@@ -26,5 +26,4 @@ urlpatterns = [
     path('iots', views.iots, name='iots'),
     path('jpgs', views.jpgs, name='jpgs'),
     path('maps', views.maps, name='maps'),
-
 ]

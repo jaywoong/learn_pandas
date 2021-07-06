@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qxqov9#o(u!v@)wetw%qtqyy-lao-zr^lj8u_zx+)-my2$#)=x'
+SECRET_KEY = 'django-insecure-&9f(_$nobw5p*ezl9ho%e4tncg9$qwko$q2+45132f1^fx+&3t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,6 +131,7 @@ DATA_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Logger
 LOG_FILE = os.path.join(BASE_DIR,'data/mylog.csv');
 
 LOGGING = {
@@ -143,7 +144,7 @@ LOGGING = {
     # 여러 포맷 정의 가능
     'formatters': {
         'format1': {
-            'format': '%(asctime)s, %(message)s',
+            'format': '%(asctime)s,%(message)s',
             'datefmt': '%d/%b/%Y %H:%M:%S'
         },
         'format2': {
@@ -162,11 +163,11 @@ LOGGING = {
             'formatter': 'format1',
         },
         # 콘솔(터미널)에 출력
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'format2',
-        }
+    'console': {
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
+        'formatter': 'format2',
+    }
     },
     # 로거
     # 로그 레코드 저장소
@@ -182,3 +183,8 @@ LOGGING = {
         }
     },
 }
+
+
+
+
+

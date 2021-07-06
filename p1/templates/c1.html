@@ -10,8 +10,8 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="http://code.jquery.com/jquery-1.7.js"></script>
     <script>
-        function display(){
-//--------------------------------------------------------------------
+      function display(data){
+//----------------------------------------------------------
 Highcharts.chart('container', {
 
     title: {
@@ -67,23 +67,21 @@ Highcharts.chart('container', {
     }
 
 });
-//--------------------------------------------------------------------
-        }
+//----------------------------------------------------------
+      };
 
-        function getdata(){
-            $.ajax({
-                url:'c1data',
-                datatype:'JSON',
-                success:function(data){
-                    alert(data);
-                }
-            });
-        };
-
-
-        $(document).ready(function(){
-            getdata()
-        })
+      function getdata(){
+        $.ajax({
+            url:'c1data',
+            datatype:'JSON',
+            success:function(data){
+                display(data);
+            }
+        });
+      };
+      $(document).ready(function(){
+          getdata();
+      });
     </script>
 </head>
 <body>
