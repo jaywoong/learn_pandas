@@ -6,6 +6,7 @@ from django.shortcuts import render
 
 # Create your views here.
 import myanalysis.p108
+from myanalysis.part4 import P109
 
 
 def home(request):
@@ -26,3 +27,7 @@ def iots(request):
     logger = logging.getLogger('users')
     logger.debug(',' + speed + ',' + rpm + ',' + temp)
     return render(request, 'iotsresult.html')
+
+def jpgs(request):
+    P109().mat01()
+    return render(request, 'jpgs.html')
