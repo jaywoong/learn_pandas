@@ -30,3 +30,12 @@ def jpgs(request):
 def maps(request):
     P109().mat07();
     return render(request, 'seoul_map.html');
+
+def chart1(request):
+    return render(request, 'chart1.html');
+def chart2(request):
+    return render(request, 'chart2.html');
+def chart3(request):
+    return render(request, 'chart3.html');
+def chart4(request):
+    return render(request, 'chart4.html');
