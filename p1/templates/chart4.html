@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function(){
+
+        });
+    </script>
 </head>
 <body>
-  <h1>Chart</h1>
-  <!-- 지도 P168 -->
-  <!--2007년 부터 2017년까지의 정보를 전송하면 해당 연도 정보 표시-->
+  <h1>Chart4</h1>
+  <!-- 지도  P168 -->
+  <!-- 2007년 부터 2017년까지의 정보를 전송 하면 해당 연도 정보 표시 -->
+  <form action="chart4s" method="GET">
+    년도 선택
+    <select name="year">
+       <option value="2007" selected>2007</option>
+       <option value="2008">2008</option>
+       <option value="2010">2010</option>
+       <option value="2017">2017</option>
+     </select>
+      <input type="submit" value="GET">
+  </form>
 </body>
 </html>

@@ -26,8 +26,14 @@ urlpatterns = [
     path('iots', views.iots, name='iots'),
     path('jpgs', views.jpgs, name='jpgs'),
     path('maps', views.maps, name='maps'),
+
     path('chart1', views.chart1, name='chart1'),
     path('chart2', views.chart2, name='chart2'),
+    path('chart2s', views.chart2s, name='chart2s'),
+
     path('chart3', views.chart3, name='chart3'),
     path('chart4', views.chart4, name='chart4'),
+    path('chart4s', views.chart4s, name='chart4s'),
+
+
 ]

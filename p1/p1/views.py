@@ -35,7 +35,24 @@ def chart1(request):
     return render(request, 'chart1.html');
 def chart2(request):
     return render(request, 'chart2.html');
+
+def chart2s(request):
+    sy = request.GET['sy'];
+    ey = request.GET['ey'];
+    ns = request.GET['ns'];
+    print(sy,ey,ns);
+    data = P109().mat03();
+    return HttpResponse(json.dumps(data), content_type='application/json');
+
 def chart3(request):
+    P109().mat10();
     return render(request, 'chart3.html');
 def chart4(request):
     return render(request, 'chart4.html');
+def chart4s(request):
+    year = request.GET['year'];
+    P109().mat09(int(year));
+    return render(request, 'chart4result.html');
+
+
+
