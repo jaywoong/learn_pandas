@@ -76,12 +76,20 @@ class P109:
         df3t = df3.T;
         df3t.drop('원자력', axis=1, inplace=True);
         #print(df3t);
-        df3t =df3t.rename(columns={'합계':'총발전량'});
+        df3t = df3t.rename(columns={'합계':'총발전량'});
         #print(df3t);
         df3t['1년전'] = df3t['총발전량'].shift(1);
         df3t['증감률'] = ((df3t['총발전량']/df3t['1년전'])-1)  * 100;
         df3t['증감률'].fillna(0,inplace=True);
+
+        df3t['year'] = df3t.index;
+        df3t['new_year'] = pd.to_datetime(df3t.index);
+        df3t['new_year'] = df3t['new_year'].dt.to_period(freq='A');
+        df3t.set_index(df3t['new_year'], inplace=True);
+
+        # df3t = df3t[sy:ey];
         print(df3t);
+
         year = df3t.index.tolist();
         w = df3t['수력'].tolist();
         f = df3t['화력'].tolist();
