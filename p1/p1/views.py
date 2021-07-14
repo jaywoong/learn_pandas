@@ -41,7 +41,7 @@ def chart2s(request):
     ey = request.GET['ey'];
     ns = request.GET['ns'];
     print(sy,ey,ns);
-    data = P109().mat03();
+    data = P109().mat03(sy,ey);
     return HttpResponse(json.dumps(data), content_type='application/json');
 
 def chart3(request):

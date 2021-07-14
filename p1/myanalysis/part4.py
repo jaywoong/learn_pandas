@@ -67,16 +67,17 @@ class P109:
         # df3t.index = df3t.index.map(int);
         # df3t.plot(kind='barh',stacked=False,alpha=0.2,figsize=(10,5));
         # plt.show();
-    def mat03(self):
+    def mat03(self,sy,ey):
         #print(df2);
         df3 = df2.loc[5:9];
         df3.drop('전력량 (억㎾h)', axis=1, inplace=True);
         df3.set_index('발전 전력별',inplace=True);
-        #print(df3);
+        print(df3);
         df3t = df3.T;
+        print(df3t);
         df3t.drop('원자력', axis=1, inplace=True);
         #print(df3t);
-        df3t = df3t.rename(columns={'합계':'총발전량'});
+        df3t =df3t.rename(columns={'합계':'총발전량'});
         #print(df3t);
         df3t['1년전'] = df3t['총발전량'].shift(1);
         df3t['증감률'] = ((df3t['총발전량']/df3t['1년전'])-1)  * 100;
@@ -86,11 +87,9 @@ class P109:
         df3t['new_year'] = pd.to_datetime(df3t.index);
         df3t['new_year'] = df3t['new_year'].dt.to_period(freq='A');
         df3t.set_index(df3t['new_year'], inplace=True);
-
-        # df3t = df3t[sy:ey];
+        df3t = df3t[sy:ey];
         print(df3t);
-
-        year = df3t.index.tolist();
+        year = df3t['year'].tolist();
         w = df3t['수력'].tolist();
         f = df3t['화력'].tolist();
         df3t['증감률'] = df3t['증감률']+100;
@@ -159,7 +158,7 @@ class P109:
         plt.savefig(STATICFILES_DIRS[0]+'/tt.jpg');
 
 if __name__ == '__main__':
-    P109().mat10();
+    P109().mat03();
 
 
 
